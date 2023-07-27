@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
+        data-xwiki-reference="xwiki:Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome"
+    data-xwiki-document="Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome"
+    data-xwiki-wiki="xwiki"
+    data-xwiki-space="Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow"
+    data-xwiki-page="WebHome"
+    data-xwiki-version="3.1"
+    data-xwiki-rest-url="/xwiki/rest/wikis/xwiki/spaces/Reliance%20Retail%20POS%20Project%20/spaces/ABTesting/spaces/System%20Design/spaces/Backend%20Experiment%20Execution%20Flow/pages/WebHome"
+    data-xwiki-form-token="2UfWYGVgmZNCBvpiwgvdPQ"
+    data-xwiki-user-reference="xwiki:XWiki.SonuPrajapati"
+    data-xwiki-locale=""
+>
+  <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                                                    <title>Backend Experiment Execution Flow - JioWiki</title>
+                                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="shortcut icon" href="../../../../../../resources/icons/xwiki/favicon.ico" />
+        <link rel="icon" href="../../../../../../resources/icons/xwiki/favicon16.png" type="image/png" />
+        <link rel="icon" href="../../../../../../resources/icons/xwiki/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../../../../../../resources/icons/xwiki/favicon144.png" />
+                                <link rel="canonical" href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" />
+                                    <link href="../../../../../../webjars/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css" type='text/css' rel='stylesheet'/><link href="../../../../../../webjars/xwiki-platform-tree-webjar/10.11.10/tree.min.css" type='text/css' rel='stylesheet'/><link href="../../../../../../webjars/selectize.js/0.12.5/css/selectize.bootstrap3.css" type='text/css' rel='stylesheet'/><link href="../../../../../../webjars/xwiki-platform-tree-webjar/10.11.10/finder.min.css" type='text/css' rel='stylesheet'/>
+    <link href="../../../../../../webjars/drawer/2.4.0/css/drawer.min.css" rel="stylesheet" type="text/css" />
+                
+                                                                                                                    
+<link href="../../../../../../skins/flamingo/style.css?skin=XWiki.DefaultSkin&#38;colorTheme=xwiki%3AFlamingoThemes.Iceberg" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../../../skins/flamingo/print.css?skin=XWiki.DefaultSkin&#38;colorTheme=xwiki%3AFlamingoThemes.Iceberg" rel="stylesheet" type="text/css" media="print" />
+<!--[if IE]>
+  <link href="../../../../../../skins/flamingo/ie-all.css?skin=XWiki.DefaultSkin&#38;colorTheme=xwiki%3AFlamingoThemes.Iceberg" rel="stylesheet" type="text/css" />
+<![endif]-->
+    
+    <link rel='stylesheet' type='text/css' href='../../../../../../resources/css/xwiki-min.css?colorTheme=FlamingoThemes.Iceberg&amp;language=en'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/uicomponents/search/searchSuggest.css'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/uicomponents/suggest/xwiki.selectize.css'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/uicomponents/viewers/tags.css?colorTheme=FlamingoThemes.Iceberg'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/uicomponents/viewers/comments.css'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/uicomponents/widgets/upload.css'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/js/xwiki/viewers/attachments.css'/><link rel='stylesheet' type='text/css' href='../../../../../../resources/uicomponents/pagination/pagination.css'/>
+    <link rel="stylesheet" type="text/css" href="../../../../../../ssx/AnnotationCode/Style/ssx5159426339670933268.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/Tour/HomepageTour/WebHome/ssx2681775675955890403.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/Customization/BackToTop/ssx6531575098832095052.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/XWiki/PagePreviewer/ssx7585747552834633188.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/AnnotationCode/Settings/ssx7767361208751047806.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/XWiki/Notifications/Code/Macro/NotificationsMacro/ssx4078046000096471.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/XWiki/Notifications/Code/NotificationsDisplayerUIX/ssx2031160364602858584.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/IconThemes/FontAwesome/ssx1701680440729670589.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/XWiki/SharePage/ssx300706057291124429.css" /><link rel="stylesheet" type="text/css" href="../../../../../../ssx/Panels/PDFExport/ssx1004749420663851042.css" />
+
+    <script type="text/javascript" src="../../../../../../webjars/requirejs/2.2.0/require.min.js"
+  data-wysiwyg="true"></script>
+                                                                                                                                          
+    <script type='text/javascript' src='../../../../../../resources/js/prototype/prototype.js'></script>
+<script type='text/javascript' src='../../../../../../resources/js/scriptaculous/effects.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/js/xwiki/xwiki-min.js?defer=false&amp;language=en'></script>
+<script type='text/javascript' src='../../../../../../skins/flamingo/flamingo.min.js?language=en' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/search/searchSuggest.js?h=1255116547' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/hierarchy/hierarchy.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/widgets/tree.min.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/suggest/suggestUsersAndGroups.js?language=en' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/exporter/exporter.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/viewers/tags.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/viewers/comments.js?language=en' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/widgets/upload.js?language=en' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/js/xwiki/viewers/attachments.js?language=en' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../resources/uicomponents/viewers/history.js' defer='defer'></script>
+
+    <script type='text/javascript' src='../../../../../../jsx/Customization/BackToTop/jsx6272406708173556061.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/AnnotationCode/Settings/jsx626639574646253931.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/AnnotationCode/Script/jsx239847106691015785.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/XWiki/PagePreviewer/jsx8271433961012464717.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/TourCode/TourJS/jsx6986426071028312244.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/XWiki/Notifications/Code/Macro/NotificationsMacro/jsx5049782686966343577.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/XWiki/Notifications/Code/NotificationsDisplayerUIX/jsx4379538728156348895.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/XWiki/QuickSearchUIX/jsx6265533797537889619.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/IconThemes/FontAwesome/jsx6184483828233044834.js' defer='defer'></script>
+<script type='text/javascript' src='../../../../../../jsx/XWiki/SharePage/jsx1464801911551776448.js' defer='defer'></script>
+
+
+<script type="text/javascript" src="../../../../../../resources/js/xwiki/compatibility.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../../../resources/js/xwiki/markerScript.js" defer="defer"></script>
+<!--[if lt IE 9]>
+    <script src="../../../../../../webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../../../../../../webjars/respond/1.4.2/dest/respond.min.js" defer="defer"></script>
+<![endif]-->
+<script type="text/javascript" data-wysiwyg="true">
+// <![CDATA[
+require.config({
+  paths: {
+    'jquery': '../../../../../../webjars/jquery/2.2.2/jquery.min',
+    'bootstrap': '../../../../../../webjars/bootstrap/3.3.7-1/js/bootstrap.min',
+    'xwiki-meta': '../../../../../../resources/js/xwiki/meta',
+    'xwiki-events-bridge': "../../../../../../resources/js/xwiki/eventsBridge",
+    'iscroll': '../../../../../../webjars/iscroll/5.1.3/build/iscroll-lite',
+    'drawer': '../../../../../../webjars/drawer/2.4.0/js/jquery.drawer.min',
+    'deferred': "../../../../../../resources/uicomponents/require/deferred"
+  },
+  shim: {
+    'bootstrap' : ['jquery'],
+    'drawer': ['jquery', 'iscroll']
+  },
+    map: {
+    '*': {
+      'jquery': 'jQueryNoConflict'
+    },
+    'jQueryNoConflict': {
+      'jquery': 'jquery'
+    },
+  }
+});
+define('jQueryNoConflict', ['jquery'], function ($) {
+    return $.noConflict();
+});
+if (window.Prototype && Prototype.BrowserFeatures.ElementExtensions) {
+  require(['jquery', 'bootstrap'], function ($) {
+    // Fix incompatibilities between BootStrap and Prototype
+    var disablePrototypeJS = function (method, pluginsToDisable) {
+      var handler = function (event) {
+        event.target[method] = undefined;
+        setTimeout(function () {
+            delete event.target[method];
+        }, 0);
+      };
+      pluginsToDisable.each(function (plugin) { 
+          $(window).on(method + '.bs.' + plugin, handler); 
+      });
+    },
+    pluginsToDisable = ['collapse', 'dropdown', 'modal', 'tooltip', 'tab', 'popover'];
+    disablePrototypeJS('show', pluginsToDisable);
+    disablePrototypeJS('hide', pluginsToDisable);
+  });
+}
+require(['jquery', 'drawer'], function($) {
+  $(document).ready(function() {
+    $('.drawer-main').closest('body').drawer();
+  });
+});
+window.XWiki = window.XWiki || {};
+XWiki.webapppath = "xwiki/";
+XWiki.servletpath = "bin/";
+XWiki.contextPath = "/xwiki";
+XWiki.mainWiki = "xwiki";
+// Deprecated: replaced by meta data in the HTML element
+XWiki.currentWiki = "xwiki";
+XWiki.currentSpace = "Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow";
+XWiki.currentPage = "WebHome";
+XWiki.editor = "";
+XWiki.viewer = "";
+XWiki.contextaction = "export";
+XWiki.skin = 'XWiki.DefaultSkin';
+XWiki.docisnew = false;
+XWiki.docsyntax = "xwiki/2.1";
+XWiki.docvariant = "language=en";
+XWiki.blacklistedSpaces = [ "Import","Panels","Scheduler","Stats","XAppClasses","XAppSheets","XAppTemplates","XWiki","WatchCode","WatchSheets","XApp","WatchAdmin","Watch","ColorThemes","AnnotationCode" ];
+XWiki.hasEdit = true;
+XWiki.hasProgramming = false;
+XWiki.hasBackupPackImportRights = false;
+XWiki.hasRenderer = true;
+window.docviewurl = "../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html";
+window.docediturl = "http://wiki.jio.com:80/xwiki/bin/edit/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome";
+window.docsaveurl = "http://wiki.jio.com:80/xwiki/bin/save/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome";
+window.docgeturl = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome";
+// ]]>
+</script>
+
+  </head>
+  <body id="body" class="skin-flamingo wiki-xwiki space-Reliance_Retail_POS_Project_.ABTesting.System_Design.Backend_Experiment_Execution_Flow viewbody hideright  panel-left-width-Medium panel-right-width-Medium drawer drawer-right drawer-close">
+<div id="xwikimaincontainer">
+<div id="xwikimaincontainerinner">
+
+  <div id="menuview">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      <nav class="navbar navbar-default actionmenu">
+    <div class="container-fluid">
+            <div class="navbar-header">
+                  <div id="companylogo">
+  <a href="http://wiki.jio.com:80/xwiki/bin/view/Main/" title="Home" rel="home" class="navbar-brand">
+    <img src="http://wiki.jio.com:80/xwiki/bin/download/FlamingoThemes/Iceberg/Padding.svg" alt="Wiki Logo"/>
+  </a>
+</div>
+
+              </div>
+            <div id="xwikimainmenu">
+    
+          <ul class="nav navbar-nav navbar-left">
+      <li class="divider" role="separator"></li>
+              </ul>
+    
+          <ul class="nav navbar-nav navbar-right">
+        <li>
+    <a class="icon-navbar drawer-toggle" id="tmDrawerActivator" title="Drawer"><span class="sr-only">Toggle navigation</span><img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" /></a>
+  </li>
+                  <li class="navbar-avatar">
+<a href="http://wiki.jio.com:80/xwiki/bin/view/XWiki/SonuPrajapati" class="icon-navbar">
+<span class="sr-only">User Profile</span>
+                                <img class='avatar avatar_50' src='../../../../../../resources/icons/xwiki/noavatar.png' alt='SonuPrajapati' title='SonuPrajapati'/></a>
+</li>
+                   
+<li class="dropdown" id="tmNotifications">
+<a class="icon-navbar dropdown-toggle" data-toggle="dropdown" role="button"
+title="Notifications">
+<span class="sr-only">
+Toggle navigation
+</span>
+<img src="../../../../../../resources/icons/silk/bell.png" alt="Icon" />
+</a>
+<ul class="dropdown-menu">
+ 
+ <li>
+<div class="notifications-header">
+<div class="clearfix">
+<div class="col-xs-4">
+<p><strong>Notifications</strong></p>
+</div>
+<div class="col-xs-8 text-right">
+<p>
+<span class="notifications-header-link">
+<a href="http://wiki.jio.com:80/xwiki/bin/get/XWiki/Notifications/Code/NotificationRSSService?outputSyntax=plain"
+class="notifications-header-link" rel="nofollow external">
+<img src="../../../../../../resources/icons/silk/rss.png" alt="Icon" />&nbsp;RSS Feed
+</a>
+</span>
+<span class="notifications-header-link">
+<a href="http://wiki.jio.com:80/xwiki/bin/view/XWiki/SonuPrajapati?category=notifications" class="notifications-settings" rel="nofollow">
+<img src="../../../../../../resources/icons/silk/cog.png" alt="Icon" />&nbsp;Settings
+</a>
+</span>
+</p>
+</div>
+</div>
+<div class="notifications-toggles clearfix" data-enabled="true">
+<pre>
+<label class="hidden" for="notificationPageOnly">Toggle Page notifications only</label><input type="checkbox" id="notificationPageOnly" name="notificationPageOnly" checked="checked"/><label class="hidden" for="notificationPageAndChildren">Toggle Page and children notifications</label><input type="checkbox" id="notificationPageAndChildren" name="notificationPageAndChildren" checked="checked"/><label class="hidden" for="notificationWiki">Toggle Wiki notifications</label><input type="checkbox" id="notificationWiki" name="notificationWiki" checked="checked"/></pre>
+</div>
+<div class="notifications-header-uix col-xs-12">
+</div>
+</div>
+<div class="notifications-area loading clearfix">
+</div>
+</li>
+
+
+</ul>
+</li>
+                 <li>
+<form class="navbar-form globalsearch globalsearch-close form-inline" id="globalsearch" action="http://wiki.jio.com:80/xwiki/bin/view/Main/Search">
+<label class="hidden" for="headerglobalsearchinput">Search</label>
+<input type="text" name="text" placeholder="search..." id="headerglobalsearchinput" />
+<button type="submit" class="btn" title="Search"><img src="../../../../../../resources/icons/silk/magnifier.png" alt="Icon" /></button>
+</form>
+</li>
+            </ul>
+    
+          </div>    </div>   </nav>
+  
+  
+
+
+
+
+
+<div class="drawer-main drawer-default" id="tmDrawer">
+  <nav class="drawer-nav">
+  
+                <div class="drawer-brand clearfix">
+      <a href="http://wiki.jio.com:80/xwiki/bin/view/XWiki/SonuPrajapati">
+                                      <img class='avatar avatar_120' src='../../../../../../resources/icons/xwiki/noavatar.png' alt='SonuPrajapati' title='SonuPrajapati'/>      </a>
+      <div class="brand-links">
+                  <a href="http://wiki.jio.com:80/xwiki/bin/view/XWiki/SonuPrajapati" class="brand-user" id="tmUser">SonuPrajapati</a>
+          <a href="http://wiki.jio.com:80/xwiki/bin/logout/XWiki/XWikiLogout?xredirect=http%3A%2F%2Fwiki.jio.com%3A80%2Fxwiki%2Fbin%2Fexport%2FReliance%2520Retail%2520POS%2520Project%2520%2FABTesting%2FSystem%2520Design%2FWebHome%3Fformat%3Dhtml" id="tmLogout" rel="nofollow"><img src="../../../../../../resources/icons/silk/user_go.png" alt="Icon" /> Log-out</a>
+                                                          </div>
+    </div>
+
+                <ul class="drawer-menu">
+                                <li class="drawer-menu-item drawer-category-header"><hr class="hidden"/>Home</li>
+                                                                                
+                            
+
+
+
+
+
+  <li class="drawer-menu-item">
+    <a href="http://wiki.jio.com:80/xwiki/bin/view/Main/AllDocs" id="tmWikiDocumentIndex">
+      <div class="drawer-menu-item-icon">
+        <img src="../../../../../../resources/icons/silk/book.png" alt="Icon" />
+      </div>
+      <div class="drawer-menu-item-text">Page Index</div>
+    </a>
+  </li>
+                                  
+
+
+
+
+
+  <li class="drawer-menu-item">
+    <a href="http://wiki.jio.com:80/xwiki/bin/view/Main/UserDirectory" id="tmMainUserIndex">
+      <div class="drawer-menu-item-icon">
+        <img src="../../../../../../resources/icons/silk/user.png" alt="Icon" />
+      </div>
+      <div class="drawer-menu-item-text">User Index</div>
+    </a>
+  </li>
+                            
+                                                    <li class="drawer-menu-item drawer-category-header"><hr class="hidden"/>Global</li>
+                                                      <li class="drawer-menu-item">
+    <a id="tmLanguages" role="button" data-toggle="collapse" href="#tmLanguages_menu" aria-expanded="false" aria-controls="tmLanguages_menu">
+      <div class="drawer-menu-item-icon">
+        <img src="../../../../../../resources/icons/silk/flag_blue.png" alt="Icon" />
+      </div>
+      <div class="drawer-menu-item-text">Languages</div>
+    </a>
+    <ul class="drawer-menu-sub-item collapse" id="tmLanguages_menu">
+    <li class="drawer-menu-item">
+    <a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html">
+      <div class="drawer-menu-item-icon">
+        <img src="../../../../../../resources/icons/silk/flag_blue.png" alt="Icon" />
+      </div>
+      <div class="drawer-menu-item-text">English
+ <img src="../../../../../../resources/icons/silk/tick.png" alt="Icon" /></div>
+    </a>
+  </li>
+        </ul>
+  </li>
+
+                                                    
+
+
+
+
+
+  <li class="drawer-menu-item">
+    <a href="http://wiki.jio.com:80/xwiki/bin/view/WikiManager/">
+      <div class="drawer-menu-item-icon">
+        <img src="../../../../../../resources/icons/silk/application_view_list.png" alt="Icon" />
+      </div>
+      <div class="drawer-menu-item-text">Wiki Index</div>
+    </a>
+  </li>
+                                                
+          </ul>
+  </nav>
+</div>
+
+
+
+
+
+  </div>
+ <div id="headerglobal">
+  <div id="globallinks">
+  </div>   <div class="clearfloats"></div>
+      
+      
+      
+      
+      
+      
+  </div> 
+
+
+<div class="contenthideright" id="contentcontainer">
+<div id="contentcontainerinner">
+<div class="leftsidecolumns">
+  <div id="contentcolumn"> 
+
+        
+  <div class="main">
+  <div id="mainContentArea">
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <ol id="hierarchy" class="breadcrumb breadcrumb-expandable" data-entity='Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome' data-id='hierarchy' data-limit='5' data-treenavigation='true' data-entities='&#123;Space xwiki:Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow=Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome}'><li
+                  
+                                
+        
+        
+                            class="wiki dropdown"><a href="http://wiki.jio.com:80/xwiki/bin/view/Main/"
+        ><img src="../../../../../../resources/icons/silk/house.png" alt="Icon" /></a><span class='dropdown-toggle' data-toggle='dropdown'><img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" /></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                         class = "breadcrumb-tree"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                        
+        
+                            class="space dropdown"><a href="http://wiki.jio.com:80/xwiki/bin/view/Reliance%20Retail%20POS%20Project%20/"
+        >JioMarketPlace</a><span class='dropdown-toggle' data-toggle='dropdown'><img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" /></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=wiki%3Axwiki"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:Reliance Retail POS Project .WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                                      
+        
+                            class="space dropdown"><a href="http://wiki.jio.com:80/xwiki/bin/view/Reliance%20Retail%20POS%20Project%20/ABTesting/"
+        >ABTesting</a><span class='dropdown-toggle' data-toggle='dropdown'><img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" /></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=document%3Axwiki%3AReliance%20Retail%20POS%20Project%20.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:Reliance Retail POS Project .ABTesting.WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                                      
+        
+                            class="space dropdown"><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/WebHome.html"
+        >A/B Testing System Design</a><span class='dropdown-toggle' data-toggle='dropdown'><img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" /></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=document%3Axwiki%3AReliance%20Retail%20POS%20Project%20.ABTesting.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:Reliance Retail POS Project .ABTesting.System Design.WebHome"              data-finder = "false"  ></div>
+</div></li><li                  
+                      
+                                      
+        
+                                                  class="active space dropdown"><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html"
+        >Backend Experiment Execution Flow</a><span class='dropdown-toggle' data-toggle='dropdown'><img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" /></span><div class='dropdown-menu'>                                                                                                                                                    <div                                                                                               class = "breadcrumb-tree"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;limit=10&#38;root=document%3Axwiki%3AReliance%20Retail%20POS%20Project%20.ABTesting.System%20Design.WebHome"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "true"              data-edges = "true"              data-checkboxes = "false"              data-openTo = "document:xwiki:Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome"              data-finder = "false"  ></div>
+</div>      </li></ol>
+    
+      
+
+
+    
+
+
+
+
+
+
+
+<div class="xcontent">
+  <div class="row document-header">
+  <div class="document-info col-xs-12 col-md-7">
+                    <div id="document-title"><h1>Backend Experiment Execution Flow</h1></div>
+          <div class="xdocLastModification">
+                  Last modified by <span class="wikilink"><a href="http://wiki.jio.com:80/xwiki/bin/view/XWiki/SonuPrajapati">SonuPrajapati</a></span> on 2023/07/25 14:58
+              </div>
+      </div>
+      <div class="document-menu col-xs-12 col-md-5">
+      
+    
+                                          <div id="contentmenu" class="pull-right actionmenu">
+                                                      <div class="btn-group" id="tmEdit">
+    <a class="btn btn-default" title="Edit"          href="http://wiki.jio.com:80/xwiki/bin/edit/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?language=en"
+        role="button" rel="nofollow">
+      <img src="../../../../../../resources/icons/silk/pencil.png" alt="Icon" />
+              <span class="btn-label">Edit</span>
+          </a>
+      </div>
+      
+                                                                        <div class="btn-group" id="tmCreate">
+    <a class="btn btn-default" title="Create"          href="http://wiki.jio.com:80/xwiki/bin/create/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome"
+        role="button" rel="nofollow">
+      <img src="../../../../../../resources/icons/silk/add.png" alt="Icon" />
+              <span class="btn-label">Create</span>
+          </a>
+      </div>
+      
+                                                      <div class="btn-group" id="tmMoreActions">
+    <a class="btn btn-default dropdown-toggle" title="More Actions"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        role="button">
+      <img src="../../../../../../resources/icons/silk/bullet_arrow_down.png" alt="Icon" />
+          </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-header">Manage</li>
+                                                                                       
+                            <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmActionCopy" title="Copy" rel="nofollow"><img src="../../../../../../resources/icons/silk/page_copy.png" alt="Icon" /> Copy</a></li>
+    
+                                <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmActionRename" title="Move / Rename" rel="nofollow"><img src="../../../../../../resources/icons/silk/page_go.png" alt="Icon" /> Move / Rename</a></li>
+    
+                                <li class=""><a href="http://wiki.jio.com:80/xwiki/bin/delete/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?language=en" id="tmActionDelete" title="Delete" rel="nofollow"><img src="../../../../../../resources/icons/silk/cancel.png" alt="Icon" /> Delete</a></li>
+    
+            
+                                                    <li class="divider" role="separator"></li>
+                  <li class="dropdown-header">Actions</li>
+                                                                                            
+      
+                                                              <li class=""><a href="" id="tmExport" title="Export" data-toggle="modal" data-target="#exportModal"><img src="../../../../../../resources/icons/silk/application_put.png" alt="Icon" /> Export</a></li>
+    
+                       
+                            <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmPrintPreview" title="Print preview" rel="nofollow"><img src="../../../../../../resources/icons/silk/printer.png" alt="Icon" /> Print preview</a></li>
+    
+                                      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmViewSource" title="View Source" rel="nofollow"><img src="../../../../../../resources/icons/silk/magnifier.png" alt="Icon" /> View Source</a></li>
+    
+                                  <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmActionShare" title="Share by email" rel="nofollow"><img src="../../../../../../resources/icons/silk/email.png" alt="Icon" /> Share by email</a></li>
+          
+        
+            
+                                                                                        <li class="divider" role="separator"></li>
+                      <li class="dropdown-header">Viewers</li>
+          
+                  
+      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmChildren" title="Children" rel="nofollow"><img src="../../../../../../resources/icons/silk/folder.png" alt="Icon" /> Children</a></li>
+                  
+      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmComment" title="Comments" rel="nofollow"><img src="../../../../../../resources/icons/silk/comment.png" alt="Icon" /> Comments</a></li>
+              
+      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html"  title="Annotations" rel="nofollow"> Annotations</a></li>
+                    
+      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmAttachments" title="Attachments (1)" rel="nofollow"><img src="../../../../../../resources/icons/silk/attach.png" alt="Icon" /> Attachments (1)</a></li>
+                  
+      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmHistory" title="History" rel="nofollow"><img src="../../../../../../resources/icons/silk/time.png" alt="Icon" /> History</a></li>
+                  
+      <li class=""><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" id="tmInformation" title="Information" rel="nofollow"><img src="../../../../../../resources/icons/silk/information.png" alt="Icon" /> Information</a></li>
+
+<script type="text/javascript">
+      //<![CDATA[
+    /**
+     * Perform a PUT on the given REST API. If the request is successful, reload the page.
+     *
+     * We use this function in order to quickly edit the user properties for developer shortcuts.
+     * Also note that JQuery is not supported here, so we use a starndard XMLHttpRequest.
+     *
+     * @param restUrl the URL to use
+     * @param errorMessage the message to display if an error ocurred in the request
+     */
+    var developerShortcutsRestCall = function(restUrl, errorMessage) {
+        const req = new XMLHttpRequest();
+        var notification = new XWiki.widgets.Notification(
+            "Performing REST request...",
+            'inprogress');
+
+        req.onreadystatechange = function(event) {
+            if (this.readyState === XMLHttpRequest.DONE) {
+                if (this.status >= 200 && this.status < 300) {
+                    // Reload the page to apply the user modifications
+                    notification.replace(new XWiki.widgets.Notification(
+                        "REST Request successful!", 'done'));
+                    location.reload()
+                } else if (this.status == 500) {
+                    notification.replace(new XWiki.widgets.Notification(this.data, 'error'));
+                } else {
+                    notification.replace(new XWiki.widgets.Notification(errorMessage, 'error'));
+                }
+            }
+        };
+
+        req.open('PUT', restUrl, true);
+        req.send(null);
+    };
+
+    // Append developer shortcuts for toggeling userType and hiddenDocuments in the current user profile
+    shortcut.add("x+x+x+a", function() {
+        developerShortcutsRestCall("/xwiki/rest/currentuser/properties/usertype/next",
+                "Unable to update the current user type");
+    }, {'type': shortcut.type.SEQUENCE, 'disable_in_input': true });
+
+    shortcut.add("x+x+x+h", function () {
+        developerShortcutsRestCall("/xwiki/rest/currentuser/properties/displayHiddenDocuments/next",
+                "Unable to toggle the current user hidden documents property");
+    }, {'type': shortcut.type.SEQUENCE, 'disable_in_input': true });
+    //]]>
+  </script>
+
+                              
+      </ul>
+      </div>
+              
+
+
+
+
+
+
+
+
+
+
+
+          <div class="modal fade text-left" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="exportModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <div class="modal-title" id="exportModalLabel">Export</div>
+        </div>
+        <div class="modal-body">
+          <div class="panel-group" id="exportModelAccordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="exportModalHeadingOffice">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#exportModelAccordion" href="#exportModelOfficeCollapse" aria-expanded="true" aria-controls="exportModelOfficeCollapse">
+          Office Formats
+        </a>
+      </div>
+    </div>
+    <div id="exportModelOfficeCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="exportModalHeadingOffice">
+      <div class="panel-body">
+        <a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" class="btn btn-primary" rel="nofollow">Export as PDF</a>
+                      </div>
+    </div>
+  </div>
+              <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="exportModalHeadingOther">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#exportModelAccordion" href="#exportModelOtherCollapse" aria-expanded="false" aria-controls="exportModelOtherCollapse">
+          Other Formats
+        </a>
+      </div>
+    </div>
+    <div id="exportModelOtherCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="exportModalHeadingOther">
+      <div class="panel-body">
+                  <div class="row">
+            <div class="col-xs-6">
+              <p>Select the pages to export:</p>
+            </div>
+            <div class="col-xs-6">
+              <p class="text-right"><a href="#" class="tree_select_all">select all</a> / <a href="#" class="tree_select_none">none</a></p>
+            </div>
+          </div>
+          <div class="exportModalTreeContainer">
+                                                                                                                                                                                                                <div                                                                                                 class = "xtree jstree-no-links"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;filterHiddenDocuments=false&#38;showAttachments=false&#38;showTranslations=false&#38;root=document%3Axwiki%3AReliance%20Retail%20POS%20Project%20.ABTesting.System%20Design.Backend%20Experiment%20Execution%20Flow.WebHome&#38;showRoot=true"              data-dragAndDrop = "true"              data-contextMenu = "true"              data-icons = "true"              data-edges = "true"              data-checkboxes = "true"              data-openTo = ""              data-finder = "false"  ></div>
+          </div>
+                <a href="http://wiki.jio.com:80/xwiki/bin/export/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?format=html&amp;format=html" class="btn btn-primary" rel="nofollow">Export as HTML</a>
+                      </div>
+    </div>
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+              
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+<hr/>
+
+            
+        <div class="row">
+    <div id="xwikicontent" class="col-xs-12">
+              <p><img src="../../../../../../attachment/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome/backedn+experiment+flow.drawio+%25282%2529.png" alt="backedn experiment flow.drawio (2).png"/></p>
+          </div>
+  </div>
+</div>
+
+
+
+
+
+    <div class="clearfloats"></div>
+  </div>            <div id="xdocFooter">
+  
+       <div class="doc-tags" id="xdocTags">
+        Tags:
+                <div class="tag-tool tag-add"><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" title="Add tags" rel="nofollow">[+]</a></div>
+        </div>
+  
+  <div id="xdocAuthors">
+    <div class="xdocCreation">       Created by <span class="wikilink"><a href="http://wiki.jio.com:80/xwiki/bin/view/XWiki/SonuPrajapati">SonuPrajapati</a></span> on 2023/07/25 14:58<br/>
+          </div>
+  </div>
+</div>
+
+              <div id="xwikidata">
+      
+    
+                    
+    
+    
+    
+                        
+            <div id="docextraanchors">
+  <span id="Commentsanchor">&nbsp;</span><span id="Annotationsanchor">&nbsp;</span><span id="Attachmentsanchor">&nbsp;</span><span id="Historyanchor">&nbsp;</span><span id="Informationanchor">&nbsp;</span>  </div>
+  <div id="xwikidatacontents">
+    <div class="floatcontainer" id="docExtraTabs">
+      <ul class="xwikitabbar" id="docExtrasTabsUl">
+                  <li id="Commentstab">
+                        <a id="Commentslink" href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" rel="nofollow">
+              Comments  <span class="itemCount">(0)</span>             </a>
+          </li>
+                  <li id="Annotationstab">
+                        <a id="Annotationslink" href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" rel="nofollow">
+              Annotations  <span class="itemCount">(0)</span>             </a>
+          </li>
+                  <li id="Attachmentstab">
+                        <a id="Attachmentslink" href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" rel="nofollow">
+              Attachments  <span class="itemCount">(1)</span>             </a>
+          </li>
+                  <li id="Historytab">
+                        <a id="Historylink" href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" rel="nofollow">
+              History             </a>
+          </li>
+                  <li id="Informationtab">
+                        <a id="Informationlink" href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/Backend+Experiment+Execution+Flow/WebHome.html" rel="nofollow">
+              Information             </a>
+          </li>
+              </ul>
+    </div>
+                <div id="docextrapanes">
+              <div id="Commentspane" class="hidden empty"></div>
+              <div id="Annotationspane" class="hidden empty"></div>
+              <div id="Attachmentspane" class="hidden empty"></div>
+              <div id="Historypane" class="hidden empty"></div>
+              <div id="Informationpane" class="hidden empty"></div>
+          </div>
+                <script type="text/javascript">
+      var hashviewer = self.document.location.hash.substring(1);
+                                                var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false) };
+                if (hashviewer == "Comments") {
+          var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true) };
+        }
+                                if ($("Commentslink") != null) {
+          $("Commentslink").href="#Comments";
+          Event.observe($("Commentslink"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false); }, false);
+        }
+                                if ($("tmShowComments") != null) {
+          $("tmShowComments").href="#Comments";
+          Event.observe($("tmShowComments"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false);
+        }
+                                if ($("commentsshortcut") != null) {
+          $("commentsshortcut").down('a').href="#comments";
+          Event.observe($("commentsshortcut"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false);
+        }
+                                                                              if (hashviewer == "Annotations") {
+          var extraInit = function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true) };
+        }
+                                if ($("Annotationslink") != null) {
+          $("Annotationslink").href="#Annotations";
+          Event.observe($("Annotationslink"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", false); }, false);
+        }
+                                if ($("tmShowAnnotations") != null) {
+          $("tmShowAnnotations").href="#Annotations";
+          Event.observe($("tmShowAnnotations"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false);
+        }
+                                if ($("annotationsshortcut") != null) {
+          $("annotationsshortcut").down('a').href="#annotations";
+          Event.observe($("annotationsshortcut"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false);
+        }
+                                                                              if (hashviewer == "Attachments") {
+          var extraInit = function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true) };
+        }
+                                if ($("Attachmentslink") != null) {
+          $("Attachmentslink").href="#Attachments";
+          Event.observe($("Attachmentslink"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", false); }, false);
+        }
+                                if ($("tmShowAttachments") != null) {
+          $("tmShowAttachments").href="#Attachments";
+          Event.observe($("tmShowAttachments"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false);
+        }
+                                if ($("attachmentsshortcut") != null) {
+          $("attachmentsshortcut").down('a').href="#attachments";
+          Event.observe($("attachmentsshortcut"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false);
+        }
+                                                                              if (hashviewer == "History") {
+          var extraInit = function(){ XWiki.displayDocExtra("History", "historyinline.vm", true) };
+        }
+                                if ($("Historylink") != null) {
+          $("Historylink").href="#History";
+          Event.observe($("Historylink"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", false); }, false);
+        }
+                                if ($("tmShowHistory") != null) {
+          $("tmShowHistory").href="#History";
+          Event.observe($("tmShowHistory"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false);
+        }
+                                if ($("historyshortcut") != null) {
+          $("historyshortcut").down('a').href="#history";
+          Event.observe($("historyshortcut"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false);
+        }
+                                                                              if (hashviewer == "Information") {
+          var extraInit = function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true) };
+        }
+                                if ($("Informationlink") != null) {
+          $("Informationlink").href="#Information";
+          Event.observe($("Informationlink"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", false); }, false);
+        }
+                                if ($("tmShowInformation") != null) {
+          $("tmShowInformation").href="#Information";
+          Event.observe($("tmShowInformation"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false);
+        }
+                                if ($("informationshortcut") != null) {
+          $("informationshortcut").down('a').href="#information";
+          Event.observe($("informationshortcut"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false);
+        }
+                                            document.observe("dom:loaded", extraInit, false);
+    </script>
+  </div> </div>  
+        </div>      </div><div id="leftPanels" class="panels left panel-width-Medium">
+      <div class="panel expanded PanelsRecentlyVisited RecentlyVisited"><h1 class="xwikipaneltitle">Recently Visited</h1><div class="xwikipanelcontents"><ul><li><a href="../../../../../../pages/xwiki/Reliance+Retail+POS+Project+/ABTesting/System+Design/WebHome.html">A/B Testing System Design</a></li><li><a href="http://wiki.jio.com:80/xwiki/bin/view/Main/DocumentDoesNotExist/">DocumentDoesNotExist</a></li></ul></div></div>
+        <div class="panel expanded PanelsNavigation Navigation"><h1 class="xwikipaneltitle">Navigation</h1><div class="xwikipanelcontents">
+
+
+
+
+
+
+
+                                                                                                                                                                      <div                                                                                                 class = "xtree"              data-responsive = "true"              data-url = "http://wiki.jio.com:80/xwiki/bin/get/Reliance%20Retail%20POS%20Project%20/ABTesting/System%20Design/Backend%20Experiment%20Execution%20Flow/WebHome?outputSyntax=plain&#38;sheet=XWiki.DocumentTree&#38;showAttachments=false&#38;showTranslations=false&#38;exclusions=document%3Axwiki%3AMain.WebHome&#38;exclusions=document%3Axwiki%3ASandbox.WebHome&#38;exclusions=document%3Axwiki%3AThemes.WebHome&#38;exclusions=document%3Axwiki%3ADashboard.WebHome&#38;exclusions=document%3Axwiki%3AXWikiTubeCode.WebHome&#38;exclusions=document%3Axwiki%3AFileManager.WebHome&#38;exclusions=document%3Axwiki%3AXWikiTube.WebHome&#38;exclusions=document%3Axwiki%3AMacros.WebHome&#38;exclusions=document%3Axwiki%3APageRelations.WebHome&#38;limit=150"              data-dragAndDrop = "false"              data-contextMenu = "false"              data-icons = "false"              data-edges = "false"              data-checkboxes = "false"              data-openTo = "document:xwiki:Reliance Retail POS Project .ABTesting.System Design.Backend Experiment Execution Flow.WebHome"              data-finder = "true"  ></div></div></div>
+        <div class="panel expanded PanelsPDFExport PDFExport"><h1 class="xwikipaneltitle">PDF Export</h1><div class="xwikipanelcontents"><p/>
+<p/>
+<form action="" id="pdfexport" method="post">
+  <input type="hidden" name="export" value="1"/>
+  <p><input type="checkbox" name="pdfcover" id="pdfcover" value="1" checked><label for="pdfcover">Include cover page</label></p>
+  <p><input type="checkbox" name="pdftoc" id="pdftoc" value="1" checked><label for="pdftoc">Include table of contents</label></p>
+  <p><input type="checkbox" name="comments" id="pdfcomments" value="1"><label for="pdfcomments">Include comments</label></p>
+  <p><input type="checkbox" name="attachments" id ="pdfattachments" value="1"><label for="pdfattachments">Include attached images</label></p>
+  <p><select name="includelinks">
+    <option value="0" selected>Don't include links
+    <option value="1">Include 1 level of links
+    <option value="2">Include 2 levels of links
+    <option value="3">Include 3 levels of links
+    <option value="4">Include 4 levels of links
+    <option value="5">Include 5 levels of links
+    <option value="6">Include 6 levels of links
+  </select>
+  </p>
+  <p>
+  <select name="includechilds">
+    <option value="0" selected>Don't include children pages
+    <option value="1">Include 1 level of children pages
+    <option value="2">Include 2 levels of children pages
+    <option value="3">Include 3 levels of children pages
+    <option value="4">Include 4 levels of children pages
+    <option value="5">Include 5 levels of children pages
+    <option value="6">Include 6 levels of children pages
+  </select>
+  </p>
+  <p><input type="checkbox" name="pagebreaks" id="pdfpagebreaks" value="1"><label for="pdfpagebreaks">Add page breaks</label>
+  <p><span class="buttonwrapper"><input type="submit" value="Export document" class="button"/></span><p>
+</form>
+<p/></div></div>
+  </div>
+
+  </div>
+<div class="clearfloats"></div>
+  </div></div><div id="footerglobal">
+  <div id="xwikilicence"></div>
+            <div id="xwikiplatformversion">
+                    <a href="http://extensions.xwiki.org?id=org.xwiki.platform:xwiki-platform-distribution-war:10.11.10:::/xwiki-commons-pom/xwiki-platform/xwiki-platform-distribution/xwiki-platform-distribution-war">
+                XWiki 10.11.10
+              </a>
+          </div>
+  </div>
+
+</div></div></body>
+</html>
