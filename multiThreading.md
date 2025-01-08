@@ -103,3 +103,154 @@ When handling 100k requests with a Java Spring Boot application on a system with
 - Memory constraints (4GB RAM) may limit scalability without optimization.
 
 By balancing your thread pool size, adopting asynchronous APIs, and caching where feasible, your Spring Boot application can efficiently handle high request volumes.
+
+
+
+
+
+To monitor requests at a granular level and detect rejections in your Java Spring Boot application, you can use a combination of **application logs**, **metrics collection**, and **monitoring tools**. Here's how to achieve this:
+
+---
+
+### **1. Application Logs**
+#### Log Rejected Requests:
+- Enable detailed logging in your application to track rejected or dropped requests.
+- Use a **`RejectedExecutionHandler`** if you're using a custom thread pool.
+
+Example for Tomcat thread pool monitoring:
+```java
+@Bean
+public TomcatServletWebServerFactory tomcatServletWebServerFactory() {
+    return new TomcatServletWebServerFactory() {
+        @Override
+        protected void customizeConnector(Connector connector) {
+            connector.setAttribute("maxThreads", 200);
+            connector.setAttribute("acceptCount", 100);
+        }
+
+        @Override
+        protected void postProcessContext(Context context) {
+            context.getPipeline().addValve(new AccessLogValve() {
+                {
+                    setPattern("%h %l %u %t \"%r\" %s %b %D");
+                    setDirectory("logs");
+                    setPrefix("access_log");
+                    setSuffix(".log");
+                }
+            });
+        }
+    };
+}
+```
+
+Access logs include:
+- **Status Codes**: Look for `429 Too Many Requests` or `503 Service Unavailable`.
+- **Response Time**: Helps identify slow responses due to queuing or resource exhaustion.
+
+---
+
+### **2. Metrics Collection**
+#### Use Actuator Metrics:
+Spring Boot provides **Actuator** to expose detailed metrics about your application.
+
+1. **Enable Actuator** in `application.properties`:
+```properties
+management.endpoints.web.exposure.include=*
+management.endpoint.metrics.enabled=true
+management.endpoint.health.enabled=true
+```
+
+2. **Monitor Thread Pool Metrics**:
+   - Use `tomcat.threads.active`, `tomcat.threads.config.max`, and `tomcat.threads.busy` to monitor thread usage.
+   - Example: `/actuator/metrics/tomcat.threads.active`.
+
+3. **Request Metrics**:
+   - Use `http.server.requests` to monitor request counts, response status codes, and latencies.
+   - Example: `/actuator/metrics/http.server.requests`.
+
+---
+
+### **3. Monitoring Tools**
+#### Use External Monitoring Tools for Granular Insights:
+1. **Prometheus and Grafana**:
+   - **Prometheus**: Collect metrics from Actuator's `/actuator/prometheus` endpoint.
+   - **Grafana**: Visualize metrics using Prometheus as a data source.
+
+   Metrics to track:
+   - Request counts by status code (`2xx`, `4xx`, `5xx`).
+   - Rejected requests (e.g., `503` responses).
+   - Thread pool saturation (active vs max threads).
+
+2. **ELK Stack (Elasticsearch, Logstash, Kibana)**:
+   - Use **Logstash** to parse logs for rejected requests or specific status codes.
+   - Visualize trends in **Kibana** dashboards.
+
+3. **APM Tools**:
+   Tools like **New Relic**, **Dynatrace**, or **Datadog** offer deep insights into application performance.
+   - Monitor request rejection rates.
+   - Get alerts for thread pool saturation or high response times.
+
+---
+
+### **4. Custom Rejection Monitoring**
+If you use a custom thread pool or want more granular control, you can implement monitoring directly in your code.
+
+#### Example: Custom Thread Pool with Monitoring
+```java
+@Bean
+public Executor taskExecutor() {
+    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    executor.setCorePoolSize(10);
+    executor.setMaxPoolSize(200);
+    executor.setQueueCapacity(1000);
+    executor.setThreadNamePrefix("CustomExecutor-");
+    executor.setRejectedExecutionHandler((r, e) -> {
+        log.error("Request rejected: {}", r.toString());
+    });
+    return executor;
+}
+```
+
+#### Expose Metrics:
+- Track rejected requests with a counter metric.
+- Use libraries like **Micrometer** to expose metrics:
+```java
+@Autowired
+private MeterRegistry meterRegistry;
+
+private Counter rejectedRequests = Counter.builder("custom.executor.rejected")
+                                          .description("Number of rejected requests")
+                                          .register(meterRegistry);
+
+executor.setRejectedExecutionHandler((r, e) -> {
+    rejectedRequests.increment();
+    log.error("Request rejected: {}", r.toString());
+});
+```
+
+---
+
+### **5. Alerts and Notifications**
+Set up alerts in your monitoring tool:
+- **CPU Usage**: Alert if it exceeds 80%.
+- **Thread Pool Saturation**: Alert if `tomcat.threads.active` approaches `tomcat.threads.config.max`.
+- **High Response Latency**: Monitor `http.server.requests` for requests taking longer than a threshold.
+- **Request Rejection**: Alert on increasing `503` or `429` responses.
+
+---
+
+### **6. Testing for Rejections**
+Simulate high load to identify bottlenecks:
+- Use tools like **Apache JMeter**, **Gatling**, or **k6** to send 100k requests.
+- Monitor system metrics and logs during the test.
+
+---
+
+### **Summary of Steps**
+1. Enable **detailed access logs** to detect rejected requests.
+2. Use Spring Boot Actuator to expose **thread pool and request metrics**.
+3. Integrate with tools like **Prometheus**, **Grafana**, or **APM tools** for granular monitoring.
+4. Implement custom rejection logging if needed.
+5. Simulate high load and analyze metrics to fine-tune configurations.
+
+This approach ensures you can monitor and act on request rejections effectively.
