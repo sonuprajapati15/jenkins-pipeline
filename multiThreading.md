@@ -24,6 +24,7 @@ When handling 100k requests with a Java Spring Boot application on a system with
      - At most, 200 requests can be handled concurrently.
      - Requests beyond 200 are queued in the request queue.
      - If the queue is full, new requests are rejected or dropped.
+     - mostly in kubernates or prod grade application healthcheck api get queued and not responds before timout and get rejected and container or pod gets killed and new one will spawn.
 
 2. **Internal API Calls**:
    - If each request involves a blocking call to an external API, the thread stays occupied but idle during the call.
