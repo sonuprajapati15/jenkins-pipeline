@@ -144,7 +144,75 @@ public TomcatServletWebServerFactory tomcatServletWebServerFactory() {
 }
 ```
 
-Access logs include:
+To manage the minimum and maximum number of threads for CPU and IP-bound tasks in a Java application, you can adjust your thread pool settings based on the nature of the task. Here’s a general guide for handling both CPU-bound and I/O-bound (IP-bound) tasks:
+
+### CPU-bound tasks:
+
+CPU-bound tasks are computationally intensive and typically require more CPU resources. For these tasks, the optimal number of threads is generally equal to the number of available processors (cores) on the machine. This is because creating more threads than available CPU cores can lead to excessive context switching, degrading performance.
+
+#### Recommended approach for CPU-bound tasks:
+
+* **Core pool size**: Set to the number of available processors (`Runtime.getRuntime().availableProcessors()`).
+* **Max pool size**: Can be the same as the core pool size or a little higher, depending on how many threads your application can handle without causing thread contention.
+
+**Example:**
+
+```java
+int availableProcessors = Runtime.getRuntime().availableProcessors();
+ExecutorService cpuBoundExecutor = new ThreadPoolExecutor(
+    availableProcessors, // Core pool size
+    availableProcessors, // Max pool size
+    60L, TimeUnit.SECONDS, // Keep-alive time
+    new LinkedBlockingQueue<Runnable>() // Work queue
+);
+```
+
+### I/O-bound tasks (IP-bound):
+
+I/O-bound tasks (such as waiting for network responses, disk I/O, or database calls) are typically constrained by waiting time, not CPU. For these tasks, it's often beneficial to have more threads than CPU cores to ensure that while one thread is waiting for I/O, others can continue executing.
+
+#### Recommended approach for I/O-bound tasks:
+
+* **Core pool size**: Start with a small number of threads (e.g., 10).
+* **Max pool size**: Set to a higher value depending on the expected workload and available system resources. This can often be set much higher than the number of available cores.
+
+**Example:**
+
+```java
+int availableProcessors = Runtime.getRuntime().availableProcessors();
+ExecutorService ioBoundExecutor = new ThreadPoolExecutor(
+    10, // Core pool size
+    200, // Max pool size (adjust based on system capacity)
+    60L, TimeUnit.SECONDS, // Keep-alive time
+    new LinkedBlockingQueue<Runnable>() // Work queue
+);
+```
+
+### Dynamic adjustment with `ForkJoinPool` (optional):
+
+If you are using Java's `ForkJoinPool` for parallel computing tasks, you can dynamically adjust the number of threads used, but you still want to avoid overloading the CPU with too many threads.
+
+**Example for `ForkJoinPool`:**
+
+```java
+ForkJoinPool forkJoinPool = new ForkJoinPool(
+    availableProcessors, // Core pool size
+    ForkJoinPool.defaultForkJoinWorkerThreadFactory, // Custom thread factory (optional)
+    null, // Uncaught exception handler (optional)
+    false // Whether or not the pool should shut down
+);
+```
+
+### Summary:
+
+* **CPU-bound tasks**: Use a thread pool size equal to the number of available CPU cores.
+* **I/O-bound tasks**: Use a thread pool with a core size that's lower than the CPU count and a higher max pool size to handle waiting on external resources.
+
+By carefully tuning these values, you can ensure that your application uses threads efficiently based on the task type.
+
+---
+
+### Access logs include:
 - **Status Codes**: Look for `429 Too Many Requests` or `503 Service Unavailable`.
 - **Response Time**: Helps identify slow responses due to queuing or resource exhaustion.
 
